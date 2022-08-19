@@ -9,7 +9,7 @@ const salesController = require('./controllers/salesController');
 app.get('/products', productsController.getAllController);
 app.get('/products/:id', productsController.getByIdController);
 app.post('/products', validateProduct, productsController.postProductController);
-app.put('/products/:id', productsController.updateController);
+app.put('/products/:id', validateProduct, productsController.updateController);
 app.delete('/products/:id', productsController.deleteController);
 
 app.get('/sales', salesController.getSalesController);
